@@ -1,0 +1,13 @@
+/* luo's style */
+
+#weblogo { /* center images */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center { /*center form/text */
+	margin: auto;
+	width: 50%; 
+	padding: 25px;
+}	
