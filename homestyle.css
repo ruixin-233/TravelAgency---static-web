@@ -1,13 +1,53 @@
-/* luo's style */
+/* style */
 
-#weblogo { /* center images */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* center images */
+.imgcenter { 
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.center { /*center form/text */
-	margin: auto;
-	width: 50%; 
-	padding: 25px;
+/*center form/text */
+.textcenter { 
+	text-align: center;
 }	
+
+/* center horizontal list */
+
+
+ul { 
+	list-style-type: none;
+	margin: 0 auto; 
+	width: fit-content;
+	/* margin&width make horizontal list center, and background frame fit to size of content */
+	overflow: hidden;
+    
+    /* width: -moz-fit-content;
+    width: -webkit-fit-content; Code From = https://www.liaohuqiu.net/posts/centering-list-items-horizontally/ */
+
+}
+
+li { 
+	display:inline;
+	float: left;
+	background-color: green;
+	padding-left: 60px;
+	padding-right: 60px;
+	font-family: dancing script;
+	font-size: 30px;
+	/*text-align: center;*/
+}
+
+li a:hover {
+	color: pink;
+}
+
+li a:link {
+  color: pink;
+}
+
+li a:visited {
+  color: pink;
+}
