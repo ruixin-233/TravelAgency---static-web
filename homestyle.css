@@ -1,12 +1,18 @@
-/* style */
+/* Home page css */
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+#welcome {
+	font-family: dancing script; 
+	font-size: 50px; 
+	background-color: #ffe6f2;
+}
+
 
 /* center images */
 .imgcenter { 
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 }
 
 /*center form/text */
@@ -14,40 +20,48 @@
 	text-align: center;
 }	
 
+
 /* center horizontal list */
-
-
 ul { 
 	list-style-type: none;
-	margin: 0 auto; 
-	width: fit-content;
-	/* margin&width make horizontal list center, and background frame fit to size of content */
+	text-align: center; 
+	/* or margin: 0 auto; */
+	/*width: fit-content;*/
+	/*margin&width make horizontal list center, and background frame fit to size of content*/
 	overflow: hidden;
-    
-    /* width: -moz-fit-content;
-    width: -webkit-fit-content; Code From = https://www.liaohuqiu.net/posts/centering-list-items-horizontally/ */
-
 }
 
 li { 
-	display:inline;
-	float: left;
-	background-color: green;
-	padding-left: 60px;
-	padding-right: 60px;
+	display:inline-block;
+	float: none;
+	padding-left: 20px;
+	padding-right: 80px;
+	color: pink;
 	font-family: dancing script;
-	font-size: 30px;
-	/*text-align: center;*/
+	font-size: 35px;
+	
 }
 
 li a:hover {
-	color: pink;
+	color: #FF338F;
 }
 
-li a:link {
-  color: pink;
-}
+/*li a:visited {
+  color: blue;
+}*/
 
-li a:visited {
-  color: pink;
-}
+
+/* Contact page css */
+
+		.centerborder {
+		border: 4px;
+		border-style: dotted;
+		border-color: pink;
+		margin: auto;
+		width: 50%;
+		padding: 25px;
+		}	
+		
+		ol { 
+			list-style-type: none;	
+			}
