@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html>
-	<style>
-		.border {
-		border: 4px;
-		border-style: dotted;
-		border-color: green;
+	<script>
+		function validate() 
+		{
+			var valid = true;
+			var message = "";
+				
+			var fname = document.getElementById("fname");
+			if (fname.value == "")
+			{
+				fname.focus();
+				message += " * Please enter your First Name.<br />";
+				valid = false;
+			}
+				
+			var lname = document.getElementById("lname");
+			if (lname.value == "")
+			{
+				lname.focus();
+				message += " * Please enter your Last Name.<br />";
+				valid = false; 
+			}
+			
+			var email = document.getElementById("email");
+				regex = /^(\w+\.)*(\w+)@(\w+\.)+[a-z]{2,}$/i;
+				if (!regex.test(email.value))
+				{
+					email.focus();
+					message += " * Please enter a valid email address.<br />";
+					valid = false;
+				}
+				
+			var postal = document.getElementById("postal");
+				regex = /^[a-z][0-9][a-z] ?\d[a-z]\d$/i;
+				if (!regex.test(postal.value))
+				{
+					postal.focus();
+					message += " * Please enter a correct postal code.<br / >";
+					valid = false
+				}
+				
+			var des = document.getElementById("dest")
+				if (dest.value == "")
+					{
+						message += " * Please select your destination.<br />"
+						valid = false;
+					}
+			
+			if (message != "")
+				{
+					document.getElementById("message").innerHTML = message
+				}
+				
+				return valid; 
 		}
-		.center {
-		margin: auto;
-		width: 50%;
-		padding: 25px;
-		}	
-	</style>
+	</script>
 	
 	<head>
 		<link rel="stylesheet" href="homestyle.css"></link>
@@ -19,25 +62,31 @@
 		<title>Register</title>
 	</head>
 	<body>
-	<form method="get" action="bouncer.php" class="border center">
+	<div id="message" style="color:red; text-align: center;"></div>
+	<form method="get" action="bouncer.php" class="centerborder">
 	<!--Customer information-->
 		<label for="fname">First Name: </label>
-			<input type="text" name="fname" /><br /><br />
+			<input type="text" id="fname" name="fname" /><br /><br />
 		<label for="lname">Last Name: </label>
-			<input type="text" name="lname" /><br /><br />
+			<input type="text" id="lname" name="lname" /><br /><br />
 		<label for="bdate">Date of Birth: </label>
-			<input type="date" name="bdate" /><br /><br />
+			<input type="date" id="bdate" name="bdate" /><br /><br />
 		<label for="gender">Gender: </label>
 			 <input type="radio" name="gender" value="female" /> Female
 			 <input type="radio" name="gender" value="male" /> Male 
 			 <input type="radio" name="gender" value="other" /> Others,
 			 if specified: <input type="text" name="gender" />
 			<br /><br />
+		<label for="email">Email:</label>
+			<input type="text" name="email" id="email" /><br /><br />
+		<label for="postal">Postal Code:</label>
+			<input type="text" name="postal" id="postal" /><br /><br />
 	<!--other info-->
 		<label for="member" min=1 max=10># of Members in Travel Group: </label>
 			<input type="number" name="member" /><br /><br />
-		<label for="trip">Destination: </label>
-			<select name="trip">
+		<label for="dest">Destination: </label>
+			<select name="dest" id="dest">
+			<option></option>
 			<option value="gz">Guangzhou</option>
 			<option value="sh">Shanghai</option>
 			<option value="bj">Beijing</option>
@@ -48,8 +97,9 @@
 			<option value="to">Toronto</option>
 			<option value="vc">Vancouver</option>
 			</select><br /><br />
-		<input type="submit" />
+		<input type="submit" onclick="return validate();" />
 		<input type="reset" /><br />
 	</form>
+	
 	</body>
 </html>
