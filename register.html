@@ -54,10 +54,12 @@
 				
 				return valid; 
 		}
+		
+		
 	</script>
 	
 	<head>
-		<link rel="stylesheet" href="homestyle.css"></link>
+		<link rel="stylesheet" href="style.css"></link>
 		<link rel="Icon" href="media/icon.ico" />
 		<title>Register</title>
 	</head>
@@ -65,27 +67,27 @@
 	<div id="message" style="color:red; text-align: center;"></div>
 	<form method="get" action="bouncer.php" class="centerborder">
 	<!--Customer information-->
-		<label for="fname">First Name: </label>
-			<input type="text" id="fname" name="fname" /><br /><br />
+		<label for="fname" >First Name: </label>
+			<input type="text" id="fname" name="fname" style="background-color: pink" /><br /><br />
 		<label for="lname">Last Name: </label>
-			<input type="text" id="lname" name="lname" /><br /><br />
+			<input type="text" id="lname" name="lname" style="background-color: pink" /><br /><br />
 		<label for="bdate">Date of Birth: </label>
-			<input type="date" id="bdate" name="bdate" /><br /><br />
+			<input type="date" id="bdate" name="bdate" style="background-color: pink" /><br /><br />
 		<label for="gender">Gender: </label>
-			 <input type="radio" name="gender" value="female" /> Female
-			 <input type="radio" name="gender" value="male" /> Male 
-			 <input type="radio" name="gender" value="other" /> Others,
-			 if specified: <input type="text" name="gender" />
+			 <input type="radio" name="gender" value="female" style="background-color: pink" /> Female
+			 <input type="radio" name="gender" value="male" style="background-color: pink" /> Male 
+			 <input type="radio" name="gender" value="other" style="background-color: pink" /> Others,
+			 if specified: <input type="text" name="gender" style="background-color: pink" />
 			<br /><br />
 		<label for="email">Email:</label>
-			<input type="text" name="email" id="email" /><br /><br />
+			<input type="text" name="email" id="email" style="background-color: pink" /><br /><br />
 		<label for="postal">Postal Code:</label>
-			<input type="text" name="postal" id="postal" /><br /><br />
+			<input type="text" name="postal" id="postal" style="background-color: pink" /><br /><br />
 	<!--other info-->
 		<label for="member" min=1 max=10># of Members in Travel Group: </label>
-			<input type="number" name="member" /><br /><br />
+			<input type="number" name="member" style="background-color: pink" /><br /><br />
 		<label for="dest">Destination: </label>
-			<select name="dest" id="dest">
+			<select name="dest" id="dest" style="background-color: pink">
 			<option></option>
 			<option value="gz">Guangzhou</option>
 			<option value="sh">Shanghai</option>
@@ -97,8 +99,8 @@
 			<option value="to">Toronto</option>
 			<option value="vc">Vancouver</option>
 			</select><br /><br />
-		<input type="submit" onclick="return validate();" />
-		<input type="reset" /><br />
+		<input type="submit" onclick="confirm('Do you want to submit the information?'); return validate();" />
+		<input type="reset" onclick="confirm('Are you sure you want to reset?')"" /><br />
 	</form>
 	
 	</body>
