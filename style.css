@@ -1,7 +1,7 @@
 /* Home page css */
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Open+Sans&display=swap');
 
 #banner {
 	border-style: solid;
@@ -21,7 +21,30 @@
 	background-color: #f0f0f5;
 }
 
-#homeImage {
+#contact {
+	margin: 10px;
+	color: black;
+	font-family: open sans;
+	font-size: 20px;
+}
+
+#menu { 
+	display:inline-block;
+	float: none;
+	padding-left: 20px;
+	padding-right: 80px;
+	color: pink;
+	font-family: satisfy;
+	font-size: 35px;
+	
+}
+
+#customerservice {
+	display: block;
+	background-color: #f0f0f5;
+}
+
+.bodyborder {
 	text-align: center;
 	padding: 20px;
 	border-top-style: dotted;
@@ -61,16 +84,7 @@ ul {
 	overflow: hidden;
 }
 
-li { 
-	display:inline-block;
-	float: none;
-	padding-left: 20px;
-	padding-right: 80px;
-	color: pink;
-	font-family: satisfy;
-	font-size: 35px;
-	
-}
+
 
 li a:hover {
 	color: black;

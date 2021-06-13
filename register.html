@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+	<style>
+		p {
+				display: block;
+				position: absolute;
+				top: 200px;
+				left: 700px;
+				padding: 5px;
+				background-color: pink;
+				font-size: 18px;
+				color: white;
+				visibility: hidden;
+			}
+	</style>
 	<script>
 		function validate() 
 		{
@@ -53,8 +66,21 @@
 				}
 				
 				return valid; 
-		}
+		};
 		
+		function showTip(paraId)
+			{
+				var para = document.getElementById(paraId);
+				para.style.visibility = "visible";
+			
+			}
+			
+			function hiddeTip(paraId)
+			{
+				var para = document.getElementById(paraId);
+				para.style.visibility = "hidden";
+			
+			}
 		
 	</script>
 	
@@ -64,13 +90,21 @@
 		<title>Register</title>
 	</head>
 	<body>
+	<p id="fnameTip"> Enter your first name here </p>
+	<p id="lnameTip"> Enter your last name here </p>
+	<p id="emailTip"> Enter your email address here </p>
+	<p id="postalTip"> Enter your postal code here </p>
+	<p id="memberTip"> Enter the number of people in your travelling group </p>
 	<div id="message" style="color:red; text-align: center;"></div>
 	<form method="get" action="bouncer.php" class="centerborder">
 	<!--Customer information-->
 		<label for="fname" >First Name: </label>
-			<input type="text" id="fname" name="fname" style="background-color: pink" /><br /><br />
+			<input type="text" id="fname" name="fname" style="background-color: pink" 
+onfocus="showTip('fnameTip');" onblur="hiddeTip('fnameTip');" /><br /><br />
 		<label for="lname">Last Name: </label>
-			<input type="text" id="lname" name="lname" style="background-color: pink" /><br /><br />
+			<input type="text" id="lname" name="lname" style="background-color: pink"
+onfocus="showTip('lnameTip');" onblur="hiddeTip('lnameTip');" />
+<p id="message"></p><br /><br />
 		<label for="bdate">Date of Birth: </label>
 			<input type="date" id="bdate" name="bdate" style="background-color: pink" /><br /><br />
 		<label for="gender">Gender: </label>
@@ -80,12 +114,15 @@
 			 if specified: <input type="text" name="gender" style="background-color: pink" />
 			<br /><br />
 		<label for="email">Email:</label>
-			<input type="text" name="email" id="email" style="background-color: pink" /><br /><br />
+			<input type="text" name="email" id="email" style="background-color: pink"
+onfocus="showTip('emailTip');" onblur="hiddeTip('emailTip');" /><br /><br />
 		<label for="postal">Postal Code:</label>
-			<input type="text" name="postal" id="postal" style="background-color: pink" /><br /><br />
+			<input type="text" name="postal" id="postal" style="background-color: pink"
+onfocus="showTip('postalTip');" onblur="hiddeTip('postalTip');" /><br /><br />
 	<!--other info-->
 		<label for="member" min=1 max=10># of Members in Travel Group: </label>
-			<input type="number" name="member" style="background-color: pink" /><br /><br />
+			<input type="number" name="member" style="background-color: pink"
+onfocus="showTip('memberTip');" onblur="hiddeTip('memberTip');" /><br /><br />
 		<label for="dest">Destination: </label>
 			<select name="dest" id="dest" style="background-color: pink">
 			<option></option>
